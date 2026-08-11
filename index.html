@@ -3,52 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saad Portfolio</title>
+
+<title>Saad Tech Zone | Portfolio</title>
+
+<meta name="description" content="Saad Tech Zone - Logo Design, Video Editing, Photo Editing and Website Development">
 
 <style>
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial,sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
-  background:#0b0f19;
-  color:white;
+  font-family:Arial, sans-serif;
+  background:#080c14;
+  color:#fff;
+  line-height:1.6;
 }
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
 
 header{
-  min-height:100vh;
-  padding:25px 7%;
-  background:linear-gradient(135deg,#0b0f19,#111827);
-}
-
-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:70px;
+  padding:0 7%;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  background:rgba(8,12,20,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:1000;
 }
 
 .logo{
-  font-size:25px;
+  font-size:22px;
   font-weight:bold;
+}
+
+.logo span{
   color:#00e5ff;
 }
 
-.menu{
-  font-size:30px;
+.menu-btn{
+  width:45px;
+  height:45px;
+  border:none;
+  border-radius:12px;
+  background:#111827;
+  color:white;
+  font-size:25px;
   cursor:pointer;
 }
 
+/* SIDE MENU */
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  display:none;
+  z-index:1500;
+}
+
+.overlay.active{
+  display:block;
+}
+
+.side-menu{
+  position:fixed;
+  top:0;
+  right:-300px;
+  width:280px;
+  height:100vh;
+  background:#111827;
+  padding:85px 25px 25px;
+  z-index:2000;
+  transition:.35s;
+}
+
+.side-menu.active{
+  right:0;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  border:none;
+  background:none;
+  color:white;
+  font-size:32px;
+}
+
+.side-menu a{
+  display:block;
+  padding:15px;
+  margin-bottom:8px;
+  border-radius:10px;
+  color:#d8dee9;
+}
+
+.side-menu a:hover{
+  background:#00e5ff;
+  color:#001014;
+}
+
+/* HERO */
+
 .hero{
-  max-width:800px;
-  margin-top:130px;
+  min-height:100vh;
+  padding:150px 7% 80px;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  justify-content:center;
+
+  background:
+  radial-gradient(circle at top right,rgba(0,229,255,.16),transparent 35%),
+  radial-gradient(circle at bottom left,rgba(100,60,255,.13),transparent 35%);
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 18px;
+  border:1px solid rgba(0,229,255,.35);
+  border-radius:30px;
+  color:#00e5ff;
+  margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:55px;
-  margin-bottom:15px;
+  font-size:clamp(45px,9vw,75px);
+  line-height:1.05;
 }
 
 .hero h1 span{
@@ -56,175 +158,368 @@ nav{
 }
 
 .hero p{
-  font-size:19px;
-  color:#b8c0cc;
-  line-height:1.7;
+  margin:20px auto;
+  max-width:650px;
+  color:#aeb7c7;
+  font-size:18px;
 }
 
 .btn{
   display:inline-block;
-  margin-top:25px;
-  padding:14px 25px;
+  padding:13px 24px;
+  margin-top:15px;
+  border-radius:12px;
   background:#00e5ff;
   color:#001014;
-  border-radius:30px;
-  text-decoration:none;
   font-weight:bold;
+  transition:.25s;
 }
 
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn.dark{
+  background:#151c2b;
+  color:#fff;
+  border:1px solid #293448;
+}
+
+/* SECTIONS */
+
 section{
-  padding:70px 7%;
+  padding:90px 7%;
 }
 
 .title{
   text-align:center;
-  font-size:35px;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
-.about{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
-  color:#c4cad4;
-  line-height:1.8;
-  font-size:18px;
+.title small{
+  color:#00e5ff;
+  text-transform:uppercase;
+  letter-spacing:2px;
 }
+
+.title h2{
+  font-size:38px;
+  margin-top:5px;
+}
+
+.title p{
+  color:#929cad;
+  max-width:650px;
+  margin:10px auto;
+}
+
+/* ABOUT */
+
+.about-box{
+  max-width:900px;
+  margin:auto;
+  padding:35px;
+  border-radius:20px;
+  background:#111827;
+  border:1px solid #263044;
+}
+
+.about-box p{
+  color:#b9c2d0;
+  margin-bottom:15px;
+}
+
+/* SERVICES */
 
 .services{
+  background:#060a11;
+}
+
+.service-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 
-.card{
-  background:#151c2b;
-  padding:30px;
+.service-card{
+  background:#111827;
+  padding:28px;
   border-radius:18px;
-  text-align:center;
   border:1px solid #263044;
   transition:.3s;
 }
 
-.card:hover{
-  transform:translateY(-8px);
+.service-card:hover{
+  transform:translateY(-7px);
   border-color:#00e5ff;
 }
 
-.card h3{
-  margin:15px 0;
+.icon{
+  font-size:40px;
+}
+
+.service-card h3{
   color:#00e5ff;
+  margin:12px 0;
 }
 
-.card p{
-  color:#b8c0cc;
-  line-height:1.6;
+.service-card p{
+  color:#9da7b8;
 }
 
-.portfolio{
+/* PORTFOLIO */
+
+.portfolio-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
 }
 
-.project{
-  background:#151c2b;
+.portfolio-card{
+  background:#111827;
   border-radius:18px;
   overflow:hidden;
   border:1px solid #263044;
+  transition:.3s;
 }
 
-.project img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
+.portfolio-card:hover{
+  transform:translateY(-7px);
+  border-color:#00e5ff;
 }
 
-.project-info{
+.thumbnail{
+  height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px;
+
+  background:
+  linear-gradient(135deg,#162236,#0b3541);
+}
+
+.portfolio-info{
   padding:20px;
 }
 
-.project-info h3{
+.portfolio-info h3{
   color:#00e5ff;
-  margin-bottom:10px;
+  margin-bottom:7px;
 }
 
-.project-info p{
-  color:#b8c0cc;
-  line-height:1.5;
+.portfolio-info p{
+  color:#9da7b8;
+  font-size:14px;
 }
+
+.portfolio-info .btn{
+  font-size:13px;
+}
+
+/* CONTACT */
 
 .contact{
+  background:#060a11;
+}
+
+.contact-grid{
+  max-width:850px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:15px;
+}
+
+.contact-card{
+  padding:25px;
+  text-align:center;
+  background:#111827;
+  border:1px solid #263044;
+  border-radius:15px;
+  transition:.3s;
+}
+
+.contact-card:hover{
+  transform:translateY(-5px);
+  border-color:#00e5ff;
+}
+
+.contact-card .contact-icon{
+  font-size:32px;
+  margin-bottom:8px;
+}
+
+.contact-card h3{
+  color:#00e5ff;
+}
+
+.contact-card p{
+  color:#8f99aa;
+  font-size:13px;
+}
+
+/* CTA */
+
+.cta{
   text-align:center;
 }
 
-.contact a{
-  display:block;
-  max-width:350px;
-  margin:12px auto;
-  padding:15px;
-  background:#151c2b;
-  color:white;
-  text-decoration:none;
-  border-radius:12px;
+.cta-box{
+  max-width:900px;
+  margin:auto;
+  padding:55px 25px;
+  border-radius:25px;
+  background:#111827;
+  border:1px solid #263044;
 }
 
-.contact a:hover{
-  background:#00e5ff;
-  color:#001014;
+.cta-box h2{
+  font-size:35px;
 }
+
+/* FOOTER */
 
 footer{
   text-align:center;
-  padding:25px;
-  background:#070a11;
-  color:#8d96a5;
+  padding:30px;
+  background:#05070c;
+  color:#778294;
 }
 
-@media(max-width:600px){
-  .hero h1{
-    font-size:40px;
-  }
+footer span{
+  color:#00e5ff;
 }
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  header{
+    padding:0 20px;
+  }
+
+  section{
+    padding:70px 20px;
+  }
+
+  .hero{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .title h2{
+    font-size:30px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
-<nav>
-  <div class="logo">Saad Portfolio</div>
+<a href="#home" class="logo">
+Saad <span>Tech Zone</span>
+</a>
 
-  <div class="menu" onclick="toggleMenu()">☰</div>
-</nav>
-
-<div class="hero">
-  <h1>Hello, I'm <span>Saad</span></h1>
-
-  <p>
-    Welcome to my personal portfolio.
-    I create professional logos, edit videos and photos,
-    and build modern websites.
-  </p>
-
-  <a href="#contact" class="btn">Contact Me</a>
-</div>
+<button class="menu-btn" onclick="openMenu()">☰</button>
 
 </header>
 
 
-<section id="about">
+<!-- MENU -->
 
-<h2 class="title">About Me</h2>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
-<div class="about">
+<div class="side-menu" id="sideMenu">
+
+<button class="close" onclick="closeMenu()">×</button>
+
+<a href="#home" onclick="closeMenu()">🏠 Home</a>
+<a href="#about" onclick="closeMenu()">👤 About</a>
+<a href="#services" onclick="closeMenu()">💼 Services</a>
+<a href="#portfolio" onclick="closeMenu()">🖼️ Portfolio</a>
+<a href="#contact" onclick="closeMenu()">📞 Contact</a>
+
+</div>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="badge">
+Available for Freelance Work
+</div>
+
+<h1>
+Hi, I'm <span>Saad</span>
+</h1>
 
 <p>
-I am a creative digital service provider passionate about
-design, video editing, photo editing and website development.
-My goal is to provide professional, attractive and useful
-digital solutions for clients and businesses.
+I create professional digital experiences through
+Logo Design, Video Editing, Photo Editing,
+Website Development and Creative Graphics.
+</p>
+
+<a href="#portfolio" class="btn">
+View My Work
+</a>
+
+<a href="#contact" class="btn dark">
+Contact Me
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="title">
+
+<small>About Me</small>
+
+<h2>Let's Create Something Great</h2>
+
+<p>
+Professional digital services for individuals,
+creators and businesses.
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<p>
+Hello! I'm <strong>Saad</strong>, a creative freelancer
+who loves turning ideas into attractive digital content.
+</p>
+
+<p>
+I provide Logo Design, Video Editing, Photo Editing,
+Website Development, Thumbnail Design and other
+creative digital services.
+</p>
+
+<p>
+My goal is to understand the client's requirements
+and deliver clean, professional and useful work.
 </p>
 
 </div>
@@ -232,91 +527,131 @@ digital solutions for clients and businesses.
 </section>
 
 
-<section>
+<!-- SERVICES -->
 
-<h2 class="title">My Services</h2>
+<section class="services" id="services">
 
-<div class="services">
+<div class="title">
 
-<div class="card">
-<h3>🎨 Logo Design</h3>
-<p>Professional and creative logo design for brands and businesses.</p>
-</div>
+<small>What I Do</small>
 
-<div class="card">
-<h3>🎬 Video Editing</h3>
-<p>Modern video editing for social media, YouTube and personal projects.</p>
-</div>
+<h2>My Services</h2>
 
-<div class="card">
-<h3>🖼️ Photo Editing</h3>
-<p>Professional photo editing, retouching and creative designs.</p>
-</div>
-
-<div class="card">
-<h3>💻 Website</h3>
-<p>Modern responsive websites for personal and business purposes.</p>
-</div>
+<p>
+Choose the service you need and contact me
+to discuss your project.
+</p>
 
 </div>
 
-</section>
+
+<div class="service-grid">
 
 
-<section>
+<div class="service-card">
 
-<h2 class="title">My Portfolio</h2>
+<div class="icon">🎨</div>
 
-<div class="portfolio">
-
-<div class="project">
-
-<img src="https://via.placeholder.com/600x400?text=Logo+Design">
-
-<div class="project-info">
 <h3>Logo Design</h3>
-<p>Professional logo design project.</p>
-<a href="#contact" class="btn">Contact for Logo</a>
-</div>
+
+<p>
+Professional logo design for brands,
+businesses and personal projects.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Logo
+</a>
 
 </div>
 
 
-<div class="project">
+<div class="service-card">
 
-<img src="https://via.placeholder.com/600x400?text=Video+Editing">
+<div class="icon">🎬</div>
 
-<div class="project-info">
 <h3>Video Editing</h3>
-<p>Creative and professional video editing project.</p>
-<a href="#contact" class="btn">Contact for Video</a>
-</div>
+
+<p>
+Creative video editing for YouTube,
+Reels, Facebook and promotional content.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Video
+</a>
 
 </div>
 
 
-<div class="project">
+<div class="service-card">
 
-<img src="https://via.placeholder.com/600x400?text=Photo+Editing">
+<div class="icon">🖼️</div>
 
-<div class="project-info">
 <h3>Photo Editing</h3>
-<p>Creative photo editing project.</p>
-<a href="#contact" class="btn">Contact for Photo</a>
-</div>
+
+<p>
+Professional photo editing,
+retouching and creative graphics.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Photo
+</a>
 
 </div>
 
 
-<div class="project">
+<div class="service-card">
 
-<img src="https://via.placeholder.com/600x400?text=Website">
+<div class="icon">🌐</div>
 
-<div class="project-info">
-<h3>Website Development</h3>
-<p>Modern responsive website project.</p>
-<a href="#contact" class="btn">Contact for Website</a>
+<h3>Website Design</h3>
+
+<p>
+Modern responsive websites for
+personal and business projects.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Website
+</a>
+
 </div>
+
+
+<div class="service-card">
+
+<div class="icon">📱</div>
+
+<h3>Thumbnail Design</h3>
+
+<p>
+Attractive thumbnails for YouTube,
+Facebook and social media content.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Thumbnail
+</a>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="icon">✨</div>
+
+<h3>Creative Graphics</h3>
+
+<p>
+Custom graphics and digital designs
+based on your requirements.
+</p>
+
+<a href="#contact" class="btn">
+Contact Me
+</a>
 
 </div>
 
@@ -325,42 +660,343 @@ digital solutions for clients and businesses.
 </section>
 
 
-<section id="contact">
+<!-- PORTFOLIO -->
 
-<h2 class="title">Contact Me</h2>
+<section id="portfolio">
 
-<div class="contact">
+<div class="title">
 
-<a href="mailto:YOURGMAIL@gmail.com">
-📧 Gmail Contact
+<small>My Work</small>
+
+<h2>Portfolio</h2>
+
+<p>
+Some of my creative and digital services.
+More projects will be added soon.
+</p>
+
+</div>
+
+
+<div class="portfolio-grid">
+
+
+<!-- LOGO -->
+
+<div class="portfolio-card">
+
+<div class="thumbnail">
+🎨
+</div>
+
+<div class="portfolio-info">
+
+<h3>Logo Design</h3>
+
+<p>
+Professional logo design for brands
+and businesses.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Logo
 </a>
 
-<a href="https://facebook.com/YOUR-FACEBOOK-ID" target="_blank">
-📘 Facebook
+</div>
+
+</div>
+
+
+<!-- VIDEO -->
+
+<div class="portfolio-card">
+
+<div class="thumbnail">
+🎬
+</div>
+
+<div class="portfolio-info">
+
+<h3>Video Editing</h3>
+
+<p>
+Creative editing for social media,
+YouTube and promotional videos.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Video
 </a>
 
-<a href="https://wa.me/YOUR-WHATSAPP-NUMBER" target="_blank">
-💬 WhatsApp
+</div>
+
+</div>
+
+
+<!-- PHOTO -->
+
+<div class="portfolio-card">
+
+<div class="thumbnail">
+🖼️
+</div>
+
+<div class="portfolio-info">
+
+<h3>Photo Editing</h3>
+
+<p>
+Professional photo editing and
+creative image design.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Photo
 </a>
 
-<a href="https://t.me/YOUR-TELEGRAM-ID" target="_blank">
-✈️ Telegram
+</div>
+
+</div>
+
+
+<!-- WEBSITE -->
+
+<div class="portfolio-card">
+
+<div class="thumbnail">
+🌐
+</div>
+
+<div class="portfolio-info">
+
+<h3>Website Design</h3>
+
+<p>
+Modern responsive websites for
+personal and business use.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Website
+</a>
+
+</div>
+
+</div>
+
+
+<!-- THUMBNAIL -->
+
+<div class="portfolio-card">
+
+<div class="thumbnail">
+📱
+</div>
+
+<div class="portfolio-info">
+
+<h3>Thumbnail Design</h3>
+
+<p>
+Eye-catching thumbnails for videos
+and social media.
+</p>
+
+<a href="#contact" class="btn">
+Contact for Thumbnail
+</a>
+
+</div>
+
+</div>
+
+
+<!-- GRAPHICS -->
+
+<div class="portfolio-card">
+
+<div class="thumbnail">
+✨
+</div>
+
+<div class="portfolio-info">
+
+<h3>Creative Graphics</h3>
+
+<p>
+Custom graphics created according
+to project requirements.
+</p>
+
+<a href="#contact" class="btn">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="cta-box">
+
+<h2>
+Have a Project in Mind?
+</h2>
+
+<p>
+Let's discuss your idea and turn it
+into something professional.
+</p>
+
+<a href="#contact" class="btn">
+Start a Project
 </a>
 
 </div>
 
 </section>
 
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="title">
+
+<small>Get In Touch</small>
+
+<h2>Contact Me</h2>
+
+<p>
+Choose your preferred way to contact me.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<!-- GMAIL -->
+
+<a class="contact-card"
+href="mailto:sadmansadik208@gmail.com">
+
+<div class="contact-icon">
+📧
+</div>
+
+<h3>Gmail</h3>
+
+<p>
+sadmansadik208@gmail.com
+</p>
+
+</a>
+
+
+<!-- FACEBOOK -->
+
+<a class="contact-card"
+href="https://www.facebook.com/share/1MesaPecrz/"
+target="_blank">
+
+<div class="contact-icon">
+📘
+</div>
+
+<h3>Facebook</h3>
+
+<p>
+Visit my Facebook
+</p>
+
+</a>
+
+
+<!-- TELEGRAM -->
+
+<a class="contact-card"
+href="https://t.me/kingsuhailbd"
+target="_blank">
+
+<div class="contact-icon">
+✈️
+</div>
+
+<h3>Telegram</h3>
+
+<p>
+@kingsuhailbd
+</p>
+
+</a>
+
+
+<!-- WHATSAPP PLACEHOLDER -->
+
+<div class="contact-card">
+
+<div class="contact-icon">
+📱
+</div>
+
+<h3>WhatsApp</h3>
+
+<p>
+Coming Soon
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-© 2026 Saad Portfolio — All Rights Reserved.
+
+© 2026 <span>Saad Tech Zone</span>.
+All Rights Reserved.
+
 </footer>
 
 
 <script>
-function toggleMenu(){
-  alert("Menu: About • Services • Portfolio • Contact");
+
+function openMenu(){
+
+document.getElementById("sideMenu")
+.classList.add("active");
+
+document.getElementById("overlay")
+.classList.add("active");
+
 }
+
+
+function closeMenu(){
+
+document.getElementById("sideMenu")
+.classList.remove("active");
+
+document.getElementById("overlay")
+.classList.remove("active");
+
+}
+
 </script>
 
 </body>
