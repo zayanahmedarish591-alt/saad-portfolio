@@ -1,1003 +1,979 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Saad Tech Zone | Portfolio</title>
+<title>Saad Tech Zone | Technology & Digital Services</title>
 
-<meta name="description" content="Saad Tech Zone - Logo Design, Video Editing, Photo Editing and Website Development">
+<meta name="description" content="Saad Tech Zone - Technology, Digital Services and Online Support">
 
 <style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  font-family:Arial, sans-serif;
-  background:#080c14;
+  font-family:Arial,sans-serif;
+  background:#07111f;
   color:#fff;
-  line-height:1.6;
 }
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-/* HEADER */
-
 header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:70px;
-  padding:0 7%;
+  min-height:100vh;
+  background:
+  radial-gradient(circle at 20% 20%,rgba(0,229,255,.18),transparent 30%),
+  radial-gradient(circle at 80% 70%,rgba(100,0,255,.18),transparent 30%),
+  linear-gradient(135deg,#06101d,#0b1930);
+}
+nav{
+  padding:20px 7%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:rgba(8,12,20,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  z-index:1000;
 }
-
 .logo{
-  font-size:22px;
-  font-weight:bold;
-}
-
-.logo span{
   color:#00e5ff;
+  font-size:24px;
+  font-weight:bold;
+  text-decoration:none;
 }
-
-.menu-btn{
-  width:45px;
-  height:45px;
-  border:none;
-  border-radius:12px;
-  background:#111827;
+.logo span{color:white}
+.nav{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+.nav a{
   color:white;
-  font-size:25px;
+  text-decoration:none;
+}
+.nav a:hover{color:#00e5ff}
+.menu{
+  display:none;
+  font-size:28px;
   cursor:pointer;
 }
-
-/* SIDE MENU */
-
-.overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  display:none;
-  z-index:1500;
-}
-
-.overlay.active{
-  display:block;
-}
-
-.side-menu{
-  position:fixed;
-  top:0;
-  right:-300px;
-  width:280px;
-  height:100vh;
-  background:#111827;
-  padding:85px 25px 25px;
-  z-index:2000;
-  transition:.35s;
-}
-
-.side-menu.active{
-  right:0;
-}
-
-.close{
-  position:absolute;
-  top:20px;
-  right:20px;
-  border:none;
-  background:none;
-  color:white;
-  font-size:32px;
-}
-
-.side-menu a{
-  display:block;
-  padding:15px;
-  margin-bottom:8px;
-  border-radius:10px;
-  color:#d8dee9;
-}
-
-.side-menu a:hover{
-  background:#00e5ff;
-  color:#001014;
-}
-
-/* HERO */
-
 .hero{
-  min-height:100vh;
-  padding:150px 7% 80px;
+  min-height:85vh;
   display:flex;
+  justify-content:center;
   align-items:center;
   text-align:center;
-  justify-content:center;
-
-  background:
-  radial-gradient(circle at top right,rgba(0,229,255,.16),transparent 35%),
-  radial-gradient(circle at bottom left,rgba(100,60,255,.13),transparent 35%);
+  padding:40px 7%;
 }
-
-.hero-content{
-  max-width:850px;
-}
-
+.hero-content{max-width:850px}
 .badge{
   display:inline-block;
-  padding:8px 18px;
-  border:1px solid rgba(0,229,255,.35);
-  border-radius:30px;
+  border:1px solid #00e5ff;
   color:#00e5ff;
+  padding:9px 18px;
+  border-radius:50px;
   margin-bottom:20px;
 }
-
 .hero h1{
-  font-size:clamp(45px,9vw,75px);
+  font-size:clamp(42px,8vw,75px);
   line-height:1.05;
 }
-
-.hero h1 span{
-  color:#00e5ff;
-}
-
+.hero h1 span{color:#00e5ff}
 .hero p{
-  margin:20px auto;
-  max-width:650px;
-  color:#aeb7c7;
+  color:#b5c4d5;
   font-size:18px;
+  line-height:1.7;
+  margin:22px 0;
 }
-
 .btn{
   display:inline-block;
-  padding:13px 24px;
-  margin-top:15px;
-  border-radius:12px;
+  padding:13px 23px;
+  margin:5px;
+  border:0;
+  border-radius:30px;
   background:#00e5ff;
-  color:#001014;
+  color:#00121c;
+  text-decoration:none;
   font-weight:bold;
-  transition:.25s;
+  cursor:pointer;
 }
-
-.btn:hover{
-  transform:translateY(-3px);
+.btn-outline{
+  background:transparent;
+  color:white;
+  border:1px solid #00e5ff;
 }
-
-.btn.dark{
-  background:#151c2b;
-  color:#fff;
-  border:1px solid #293448;
-}
-
-/* SECTIONS */
-
-section{
-  padding:90px 7%;
-}
-
+section{padding:75px 7%}
 .title{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:40px;
 }
-
-.title small{
-  color:#00e5ff;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-
 .title h2{
-  font-size:38px;
-  margin-top:5px;
+  font-size:36px;
+  margin-bottom:10px;
 }
+.title span{color:#00e5ff}
+.title p{color:#91a4b9}
 
-.title p{
-  color:#929cad;
-  max-width:650px;
-  margin:10px auto;
-}
-
-/* ABOUT */
-
-.about-box{
-  max-width:900px;
+.cards{
+  max-width:1100px;
   margin:auto;
-  padding:35px;
-  border-radius:20px;
-  background:#111827;
-  border:1px solid #263044;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
-
-.about-box p{
-  color:#b9c2d0;
+.card{
+  background:#0c1c30;
+  border:1px solid #19344d;
+  border-radius:20px;
+  overflow:hidden;
+}
+.thumb{
+  height:180px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:65px;
+  background:linear-gradient(145deg,#123b56,#081525);
+}
+.card-body{padding:22px}
+.card-body h3{margin-bottom:10px}
+.card-body p{
+  color:#9eb0c3;
+  line-height:1.6;
   margin-bottom:15px;
 }
 
-/* SERVICES */
-
-.services{
-  background:#060a11;
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.service-card{
-  background:#111827;
-  padding:28px;
-  border-radius:18px;
-  border:1px solid #263044;
-  transition:.3s;
-}
-
-.service-card:hover{
-  transform:translateY(-7px);
-  border-color:#00e5ff;
-}
-
-.icon{
-  font-size:40px;
-}
-
-.service-card h3{
-  color:#00e5ff;
-  margin:12px 0;
-}
-
-.service-card p{
-  color:#9da7b8;
-}
-
-/* PORTFOLIO */
-
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
-}
-
-.portfolio-card{
-  background:#111827;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid #263044;
-  transition:.3s;
-}
-
-.portfolio-card:hover{
-  transform:translateY(-7px);
-  border-color:#00e5ff;
-}
-
-.thumbnail{
-  height:190px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:65px;
-
-  background:
-  linear-gradient(135deg,#162236,#0b3541);
-}
-
-.portfolio-info{
-  padding:20px;
-}
-
-.portfolio-info h3{
-  color:#00e5ff;
-  margin-bottom:7px;
-}
-
-.portfolio-info p{
-  color:#9da7b8;
-  font-size:14px;
-}
-
-.portfolio-info .btn{
-  font-size:13px;
-}
-
-/* CONTACT */
-
-.contact{
-  background:#060a11;
-}
-
-.contact-grid{
-  max-width:850px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-  gap:15px;
-}
-
-.contact-card{
-  padding:25px;
-  text-align:center;
-  background:#111827;
-  border:1px solid #263044;
-  border-radius:15px;
-  transition:.3s;
-}
-
-.contact-card:hover{
-  transform:translateY(-5px);
-  border-color:#00e5ff;
-}
-
-.contact-card .contact-icon{
-  font-size:32px;
-  margin-bottom:8px;
-}
-
-.contact-card h3{
-  color:#00e5ff;
-}
-
-.contact-card p{
-  color:#8f99aa;
-  font-size:13px;
-}
-
-/* CTA */
-
-.cta{
-  text-align:center;
-}
-
-.cta-box{
+.socials{
   max-width:900px;
   margin:auto;
-  padding:55px 25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.social{
+  background:#0c1c30;
+  border:1px solid #19344d;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+  color:white;
+  text-decoration:none;
+}
+.social:hover{border-color:#00e5ff}
+.icon{font-size:40px;margin-bottom:10px}
+.social p{color:#8fa3b7;margin-top:7px}
+
+.contact{
+  max-width:750px;
+  margin:auto;
+  padding:45px 25px;
+  text-align:center;
+  background:#0c1c30;
+  border:1px solid #19344d;
   border-radius:25px;
-  background:#111827;
-  border:1px solid #263044;
 }
-
-.cta-box h2{
-  font-size:35px;
+.contact p{
+  color:#a5b6c8;
+  line-height:1.7;
+  margin:15px 0 20px;
 }
-
-/* FOOTER */
 
 footer{
-  text-align:center;
   padding:30px;
-  background:#05070c;
-  color:#778294;
+  text-align:center;
+  color:#8192a5;
+  border-top:1px solid #17283b;
 }
 
-footer span{
+.admin-button{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:52px;
+  height:52px;
+  border:0;
+  border-radius:50%;
+  background:#00e5ff;
+  font-size:21px;
+  cursor:pointer;
+  z-index:50;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  z-index:100;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+.login-box{
+  width:100%;
+  max-width:400px;
+  background:#0b192b;
+  border:1px solid #00e5ff;
+  border-radius:20px;
+  padding:30px;
+  position:relative;
+}
+.close{
+  position:absolute;
+  right:18px;
+  top:10px;
+  font-size:28px;
+  cursor:pointer;
+}
+.login-box h2{
+  text-align:center;
+  color:#00e5ff;
+  margin-bottom:20px;
+}
+.input{
+  width:100%;
+  padding:14px;
+  margin:8px 0;
+  background:#07111f;
+  color:white;
+  border:1px solid #29435d;
+  border-radius:10px;
+}
+.message{
+  text-align:center;
+  margin-top:12px;
   color:#00e5ff;
 }
 
-/* MOBILE */
-
-@media(max-width:600px){
-
-  header{
-    padding:0 20px;
-  }
-
-  section{
-    padding:70px 20px;
-  }
-
-  .hero{
-    padding-left:20px;
-    padding-right:20px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .title h2{
-    font-size:30px;
-  }
-
+.admin{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:200;
+  overflow:auto;
+  background:#050d17;
+  padding:30px 7%;
+}
+.admin h1{
+  color:#00e5ff;
+  margin-bottom:10px;
+}
+.admin-box{
+  max-width:900px;
+  margin:25px auto;
+  padding:25px;
+  background:#0b192b;
+  border:1px solid #19344d;
+  border-radius:20px;
+}
+.product-form input,
+.product-form textarea{
+  width:100%;
+  margin:7px 0;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #29435d;
+  background:#07111f;
+  color:#fff;
+}
+.product-form textarea{min-height:100px}
+.admin-product{
+  margin-top:12px;
+  padding:15px;
+  background:#071525;
+  border-radius:12px;
+}
+.order{
+  margin-top:10px;
+  padding:15px;
+  background:#071525;
+  border-radius:12px;
+  border:1px solid #17334c;
 }
 
+@media(max-width:800px){
+  .menu{display:block}
+  .nav{
+    display:none;
+    position:absolute;
+    right:7%;
+    top:70px;
+    flex-direction:column;
+    background:#0b192b;
+    padding:20px;
+    border-radius:15px;
+  }
+  .nav.show{display:flex}
+  .cards{grid-template-columns:1fr}
+  .socials{grid-template-columns:1fr 1fr}
+}
+@media(max-width:450px){
+  .hero h1{font-size:43px}
+  .socials{grid-template-columns:1fr}
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<header id="home">
 
-<header>
+<nav>
+<a class="logo" href="#home">Saad <span>Tech Zone</span></a>
 
-<a href="#home" class="logo">
-Saad <span>Tech Zone</span>
-</a>
+<div class="menu" onclick="toggleMenu()">☰</div>
 
-<button class="menu-btn" onclick="openMenu()">☰</button>
+<ul class="nav" id="nav">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#social">Social</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<div class="hero-content">
+
+<div class="badge">🚀 Technology • Digital • Support</div>
+
+<h1>
+Welcome to<br>
+<span>Saad Tech Zone</span>
+</h1>
+
+<p>
+Technology, digital services, online support এবং প্রয়োজনীয়
+resources — সবকিছু এক জায়গায়।
+</p>
+
+<a href="#services" class="btn">Explore Services</a>
+<a href="#contact" class="btn btn-outline">Contact Me</a>
+
+</div>
+</div>
 
 </header>
 
 
-<!-- MENU -->
-
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
-<div class="side-menu" id="sideMenu">
-
-<button class="close" onclick="closeMenu()">×</button>
-
-<a href="#home" onclick="closeMenu()">🏠 Home</a>
-<a href="#about" onclick="closeMenu()">👤 About</a>
-<a href="#services" onclick="closeMenu()">💼 Services</a>
-<a href="#portfolio" onclick="closeMenu()">🖼️ Portfolio</a>
-<a href="#contact" onclick="closeMenu()">📞 Contact</a>
-
-</div>
-
-
-<!-- HOME -->
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-<div class="badge">
-Available for Freelance Work
-</div>
-
-<h1>
-Hi, I'm <span>Saad</span>
-</h1>
-
-<p>
-I create professional digital experiences through
-Logo Design, Video Editing, Photo Editing,
-Website Development and Creative Graphics.
-</p>
-
-<a href="#portfolio" class="btn">
-View My Work
-</a>
-
-<a href="#contact" class="btn dark">
-Contact Me
-</a>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
+<section id="services">
 
 <div class="title">
-
-<small>About Me</small>
-
-<h2>Let's Create Something Great</h2>
-
-<p>
-Professional digital services for individuals,
-creators and businesses.
-</p>
-
+<h2>Our <span>Services</span></h2>
+<p>Technology এবং digital support</p>
 </div>
 
+<div class="cards">
 
-<div class="about-box">
-
-<p>
-Hello! I'm <strong>Saad</strong>, a creative freelancer
-who loves turning ideas into attractive digital content.
-</p>
-
-<p>
-I provide Logo Design, Video Editing, Photo Editing,
-Website Development, Thumbnail Design and other
-creative digital services.
-</p>
-
-<p>
-My goal is to understand the client's requirements
-and deliver clean, professional and useful work.
-</p>
-
+<div class="card">
+<div class="thumb">💻</div>
+<div class="card-body">
+<h3>Web Development</h3>
+<p>Professional responsive website design এবং development.</p>
+<a href="#contact" class="btn">Contact</a>
+</div>
 </div>
 
+<div class="card">
+<div class="thumb">🛠️</div>
+<div class="card-body">
+<h3>Digital Support</h3>
+<p>Technology এবং digital platform বিষয়ে সহায়তা।</p>
+<a href="#contact" class="btn">Contact</a>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb">📱</div>
+<div class="card-body">
+<h3>Online Services</h3>
+<p>বিভিন্ন online এবং digital service সম্পর্কে guidance.</p>
+<a href="#contact" class="btn">Contact</a>
+</div>
+</div>
+
+</div>
 </section>
 
 
-<!-- SERVICES -->
-
-<section class="services" id="services">
+<section id="social">
 
 <div class="title">
-
-<small>What I Do</small>
-
-<h2>My Services</h2>
-
-<p>
-Choose the service you need and contact me
-to discuss your project.
-</p>
-
+<h2>Find <span>Me Online</span></h2>
+<p>নিচের বাটনে চাপ দিলে সরাসরি profile/contact-এ যাবে</p>
 </div>
 
+<div class="socials">
 
-<div class="service-grid">
-
-
-<div class="service-card">
-
-<div class="icon">🎨</div>
-
-<h3>Logo Design</h3>
-
-<p>
-Professional logo design for brands,
-businesses and personal projects.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Logo
-</a>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="icon">🎬</div>
-
-<h3>Video Editing</h3>
-
-<p>
-Creative video editing for YouTube,
-Reels, Facebook and promotional content.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Video
-</a>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="icon">🖼️</div>
-
-<h3>Photo Editing</h3>
-
-<p>
-Professional photo editing,
-retouching and creative graphics.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Photo
-</a>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="icon">🌐</div>
-
-<h3>Website Design</h3>
-
-<p>
-Modern responsive websites for
-personal and business projects.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Website
-</a>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="icon">📱</div>
-
-<h3>Thumbnail Design</h3>
-
-<p>
-Attractive thumbnails for YouTube,
-Facebook and social media content.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Thumbnail
-</a>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="icon">✨</div>
-
-<h3>Creative Graphics</h3>
-
-<p>
-Custom graphics and digital designs
-based on your requirements.
-</p>
-
-<a href="#contact" class="btn">
-Contact Me
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PORTFOLIO -->
-
-<section id="portfolio">
-
-<div class="title">
-
-<small>My Work</small>
-
-<h2>Portfolio</h2>
-
-<p>
-Some of my creative and digital services.
-More projects will be added soon.
-</p>
-
-</div>
-
-
-<div class="portfolio-grid">
-
-
-<!-- LOGO -->
-
-<div class="portfolio-card">
-
-<div class="thumbnail">
-🎨
-</div>
-
-<div class="portfolio-info">
-
-<h3>Logo Design</h3>
-
-<p>
-Professional logo design for brands
-and businesses.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Logo
-</a>
-
-</div>
-
-</div>
-
-
-<!-- VIDEO -->
-
-<div class="portfolio-card">
-
-<div class="thumbnail">
-🎬
-</div>
-
-<div class="portfolio-info">
-
-<h3>Video Editing</h3>
-
-<p>
-Creative editing for social media,
-YouTube and promotional videos.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Video
-</a>
-
-</div>
-
-</div>
-
-
-<!-- PHOTO -->
-
-<div class="portfolio-card">
-
-<div class="thumbnail">
-🖼️
-</div>
-
-<div class="portfolio-info">
-
-<h3>Photo Editing</h3>
-
-<p>
-Professional photo editing and
-creative image design.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Photo
-</a>
-
-</div>
-
-</div>
-
-
-<!-- WEBSITE -->
-
-<div class="portfolio-card">
-
-<div class="thumbnail">
-🌐
-</div>
-
-<div class="portfolio-info">
-
-<h3>Website Design</h3>
-
-<p>
-Modern responsive websites for
-personal and business use.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Website
-</a>
-
-</div>
-
-</div>
-
-
-<!-- THUMBNAIL -->
-
-<div class="portfolio-card">
-
-<div class="thumbnail">
-📱
-</div>
-
-<div class="portfolio-info">
-
-<h3>Thumbnail Design</h3>
-
-<p>
-Eye-catching thumbnails for videos
-and social media.
-</p>
-
-<a href="#contact" class="btn">
-Contact for Thumbnail
-</a>
-
-</div>
-
-</div>
-
-
-<!-- GRAPHICS -->
-
-<div class="portfolio-card">
-
-<div class="thumbnail">
-✨
-</div>
-
-<div class="portfolio-info">
-
-<h3>Creative Graphics</h3>
-
-<p>
-Custom graphics created according
-to project requirements.
-</p>
-
-<a href="#contact" class="btn">
-Contact Me
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="cta">
-
-<div class="cta-box">
-
-<h2>
-Have a Project in Mind?
-</h2>
-
-<p>
-Let's discuss your idea and turn it
-into something professional.
-</p>
-
-<a href="#contact" class="btn">
-Start a Project
-</a>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-<div class="title">
-
-<small>Get In Touch</small>
-
-<h2>Contact Me</h2>
-
-<p>
-Choose your preferred way to contact me.
-</p>
-
-</div>
-
-
-<div class="contact-grid">
-
-
-<!-- GMAIL -->
-
-<a class="contact-card"
-href="mailto:sadmansadik208@gmail.com">
-
-<div class="contact-icon">
-📧
-</div>
-
-<h3>Gmail</h3>
-
-<p>
-sadmansadik208@gmail.com
-</p>
-
-</a>
-
-
-<!-- FACEBOOK -->
-
-<a class="contact-card"
+<a class="social"
 href="https://www.facebook.com/share/1MesaPecrz/"
 target="_blank">
-
-<div class="contact-icon">
-📘
-</div>
-
-<h3>Facebook</h3>
-
-<p>
-Visit my Facebook
-</p>
-
+<div class="icon">📘</div>
+<b>Facebook</b>
+<p>Visit Profile</p>
 </a>
 
-
-<!-- TELEGRAM -->
-
-<a class="contact-card"
+<a class="social"
 href="https://t.me/kingsuhailbd"
 target="_blank">
-
-<div class="contact-icon">
-✈️
-</div>
-
-<h3>Telegram</h3>
-
-<p>
-@kingsuhailbd
-</p>
-
+<div class="icon">✈️</div>
+<b>Telegram</b>
+<p>@kingsuhailbd</p>
 </a>
 
-
-<!-- WHATSAPP PLACEHOLDER -->
-
-<div class="contact-card">
-
-<div class="contact-icon">
-📱
-</div>
-
-<h3>WhatsApp</h3>
-
-<p>
-Coming Soon
-</p>
+<a class="social"
+href="mailto:sadmansadik208@gmail.com">
+<div class="icon">📧</div>
+<b>Gmail</b>
+<p>Send Email</p>
+</a>
 
 </div>
-
-
-</div>
-
 </section>
 
 
-<!-- FOOTER -->
+<section id="contact">
+
+<div class="contact">
+
+<h2>Let's Work Together 🤝</h2>
+
+<p>
+Website, technology বা digital service সম্পর্কে
+যোগাযোগ করতে নিচের বাটনে চাপ দিন।
+</p>
+
+<a
+class="btn"
+href="mailto:sadmansadik208@gmail.com">
+📧 Email Me
+</a>
+
+<a
+class="btn btn-outline"
+href="https://www.facebook.com/share/1MesaPecrz/"
+target="_blank">
+📘 Facebook
+</a>
+
+</div>
+</section>
+
 
 <footer>
-
-© 2026 <span>Saad Tech Zone</span>.
-All Rights Reserved.
-
+© 2026 Saad Tech Zone — All Rights Reserved.
 </footer>
+
+
+<button
+class="admin-button"
+onclick="openLogin()">
+🔐
+</button>
+
+
+<!-- LOGIN -->
+
+<div class="modal" id="loginModal">
+
+<div class="login-box">
+
+<div class="close" onclick="closeLogin()">×</div>
+
+<h2>🔐 Admin Login</h2>
+
+<input
+class="input"
+id="email"
+type="email"
+placeholder="Admin Email">
+
+<input
+class="input"
+id="password"
+type="password"
+placeholder="Password">
+
+<button
+class="btn"
+style="width:100%"
+onclick="loginAdmin()">
+Login
+</button>
+
+<div class="message" id="loginMessage"></div>
+
+</div>
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<div class="admin" id="adminPanel">
+
+<h1>⚡ Saad Tech Zone Admin Panel</h1>
+
+<p id="adminUser" style="color:#9fb1c4"></p>
+
+
+<div class="admin-box">
+
+<h2>➕ Add Product</h2>
+
+<div class="product-form">
+
+<input
+id="productName"
+placeholder="Product Name">
+
+<input
+id="productPrice"
+placeholder="Price">
+
+<input
+id="productImage"
+placeholder="Thumbnail Image URL">
+
+<textarea
+id="productDescription"
+placeholder="Product Description"></textarea>
+
+<button
+class="btn"
+onclick="addProduct()">
+Add Product
+</button>
+
+</div>
+
+</div>
+
+
+<div class="admin-box">
+
+<h2>📦 Products</h2>
+
+<div id="adminProducts">
+Loading...
+</div>
+
+</div>
+
+
+<div class="admin-box">
+
+<h2>🛒 Orders</h2>
+
+<div id="orders">
+Loading...
+</div>
+
+</div>
+
+
+<button
+class="btn"
+onclick="logoutAdmin()">
+Logout
+</button>
+
+<button
+class="btn btn-outline"
+onclick="closeAdminPanel()">
+Back
+</button>
+
+</div>
 
 
 <script>
 
-function openMenu(){
-
-document.getElementById("sideMenu")
-.classList.add("active");
-
-document.getElementById("overlay")
-.classList.add("active");
-
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("show");
 }
 
+function openLogin(){
+document.getElementById("loginModal").style.display="flex";
+}
 
-function closeMenu(){
+function closeLogin(){
+document.getElementById("loginModal").style.display="none";
+}
 
-document.getElementById("sideMenu")
-.classList.remove("active");
-
-document.getElementById("overlay")
-.classList.remove("active");
-
+function closeAdminPanel(){
+document.getElementById("adminPanel").style.display="none";
 }
 
 </script>
 
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+getFirestore,
+doc,
+getDoc,
+collection,
+addDoc,
+getDocs,
+deleteDoc,
+serverTimestamp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyDJ840olI1Cn06vZISz-siy16W0dNTBqh0",
+
+authDomain:
+"saad-portfolio-7d5d4.firebaseapp.com",
+
+projectId:
+"saad-portfolio-7d5d4",
+
+storageBucket:
+"saad-portfolio-7d5d4.firebasestorage.app",
+
+messagingSenderId:
+"249308283837",
+
+appId:
+"1:249308283837:web:7f41688502e6cb672788d4"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+const db =
+getFirestore(app);
+
+
+window.loginAdmin = async function(){
+
+const email =
+document.getElementById("email").value.trim();
+
+const password =
+document.getElementById("password").value;
+
+const message =
+document.getElementById("loginMessage");
+
+
+if(!email || !password){
+
+message.textContent =
+"Email ও Password দিন।";
+
+return;
+}
+
+
+message.textContent =
+"Login হচ্ছে...";
+
+
+try{
+
+const result =
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+
+const uid =
+result.user.uid;
+
+
+/*
+Admin document:
+
+admins
+ └── USER UID
+      ├── email
+      ├── name
+      └── role
+*/
+
+
+const adminRef =
+doc(db,"admins",uid);
+
+const adminSnap =
+await getDoc(adminRef);
+
+
+if(!adminSnap.exists()){
+
+await signOut(auth);
+
+message.textContent =
+"❌ এই account Admin নয়।";
+
+return;
+}
+
+
+const adminData =
+adminSnap.data();
+
+
+if(adminData.role !== "admin"){
+
+await signOut(auth);
+
+message.textContent =
+"❌ Admin permission নেই।";
+
+return;
+}
+
+
+closeLogin();
+
+document.getElementById(
+"adminPanel"
+).style.display="block";
+
+
+document.getElementById(
+"adminUser"
+).textContent =
+"Logged in: " + email;
+
+
+loadProducts();
+
+loadAdminProducts();
+
+loadOrders();
+
+
+}catch(error){
+
+console.error(error);
+
+message.textContent =
+"❌ Email অথবা Password ভুল।";
+
+}
+
+};
+
+
+window.logoutAdmin = async function(){
+
+await signOut(auth);
+
+document.getElementById(
+"adminPanel"
+).style.display="none";
+
+alert("Logout successful.");
+
+};
+
+
+window.addProduct = async function(){
+
+const name =
+document.getElementById("productName").value.trim();
+
+const price =
+document.getElementById("productPrice").value.trim();
+
+const image =
+document.getElementById("productImage").value.trim();
+
+const description =
+document.getElementById("productDescription").value.trim();
+
+
+if(!name || !price){
+
+alert("Product name এবং price দিন.");
+
+return;
+}
+
+
+await addDoc(
+collection(db,"products"),
+{
+
+name:name,
+
+price:price,
+
+image:image,
+
+description:description,
+
+createdAt:serverTimestamp()
+
+});
+
+
+alert("✅ Product added.");
+
+
+document.getElementById(
+"productName"
+).value="";
+
+document.getElementById(
+"productPrice"
+).value="";
+
+document.getElementById(
+"productImage"
+).value="";
+
+document.getElementById(
+"productDescription"
+).value="";
+
+
+loadProducts();
+
+loadAdminProducts();
+
+};
+
+
+async function loadProducts(){
+
+console.log("Products ready");
+
+}
+
+
+async function loadAdminProducts(){
+
+const box =
+document.getElementById("adminProducts");
+
+box.innerHTML="";
+
+
+const snap =
+await getDocs(
+collection(db,"products")
+);
+
+
+if(snap.empty){
+
+box.innerHTML =
+"<p style='color:#9fb1c4'>No products yet.</p>";
+
+return;
+}
+
+
+snap.forEach(item=>{
+
+const p =
+item.data();
+
+const div =
+document.createElement("div");
+
+div.className =
+"admin-product";
+
+div.innerHTML = `
+
+<b>${p.name || ""}</b><br>
+
+<span style="color:#00e5ff">
+৳ ${p.price || "0"}
+</span>
+
+<br>
+
+<button
+class="btn"
+onclick="deleteProduct('${item.id}')">
+Delete
+</button>
+
+`;
+
+box.appendChild(div);
+
+});
+
+}
+
+
+window.deleteProduct =
+async function(id){
+
+if(!confirm(
+"এই product delete করবেন?"
+))
+return;
+
+
+await deleteDoc(
+doc(db,"products",id)
+);
+
+
+loadAdminProducts();
+
+};
+
+
+async function loadOrders(){
+
+const box =
+document.getElementById("orders");
+
+box.innerHTML =
+"<p style='color:#9fb1c4'>No orders yet.</p>";
+
+}
+
+
+onAuthStateChanged(
+auth,
+(user)=>{
+
+if(user){
+
+console.log(
+"Logged in:",
+user.email
+);
+
+}
+
+}
+);
+
+</script>
+
 </body>
-</html>
+  </html>
